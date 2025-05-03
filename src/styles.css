@@ -1,0 +1,198 @@
+/* src/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 95vh;
+    /* Full viewport height */
+}
+
+.phone-container {
+    width: 768px;
+    height: 1000px;
+    border: 16px solid black;
+    /* Black border to mimic iPad edges */
+    border-radius: 20px;
+    /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    background-color: grey;
+    /* White background for the iPad */
+    overflow: hidden;
+    /* Hide overflow */
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+    position: relative;
+    /* Position relative for absolute positioning of the button */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 10px 0;
+    /* Margin for spacing */
+}
+
+/*input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #353232;
+    border-radius: 4px;
+    box-sizing: border-box;
+}*/
+
+/* src/styles.css */
+/* Existing styles... */
+
+input {
+    width: 80%;
+    /* Set width to 80% for better centering */
+    padding: 10px;
+    margin: 10px auto;
+    /* Center the input by using auto margins */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Light border with transparency */
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Transparent background */
+    color: #333;
+    /* Text color */
+    box-shadow: none;
+    /* Remove any shadow */
+    display: block;
+    /* Make it a block element to center */
+    transition: background-color 0.3s;
+    /* Smooth transition for background */
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    /* Placeholder color with transparency */
+}
+
+input:focus {
+    outline: none;
+    /* Remove outline on focus */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Slightly darker on focus */
+}
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    /* Add padding for better spacing */
+    height: calc(100% - 100px);
+    /* Adjust height to fit within the container */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    /* Removed 'scrollbar-width' for better browser compatibility */
+    -webkit-scrollbar {
+        width: 6px;
+    }
+    /* For Firefox */
+    /* Removed 'scrollbar-color' for better browser compatibility */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.comments-container::-webkit-scrollbar {
+    width: 0;
+    /* Hide scrollbar */
+    background: transparent;
+    /* Transparent background */
+}
+
+.comment-item {
+    background: #ffffff;
+    /* White background for comments */
+    border: 1px solid #ccc;
+    /* Light border */
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+    color: #333;
+}
+
+.comment-item:hover {
+    background: #e9e1e1;
+    /* Light gray on hover */
+}
+
+.comment-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.comment-text {
+    margin: 0;
+    color: #333;
+    
+}
+
+.details {
+    display: none;
+    margin-top: 10px;
+}
+
+.details.show {
+    display: block;
+}
+
+.retry-button {
+    background-color: #007bff;
+    color: rgb(21, 15, 15);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.retry-button:hover {
+    background-color: #0056b3;
+}
+
+.loading-skeleton {
+    background-color: #e0e0e0;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* Home button styles */
+.home-button {
+    position: absolute;
+    /* Position it at the bottom center */
+    bottom: 20px;
+    /* Distance from the bottom */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Adjust for centering */
+    width: 80px;
+    /* Width of the home button */
+    height: 30px;
+    /* Height of the home button */
+    background-color: #333;
+    /* Dark color for the button */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .comment-item {
+        max-width: 95%;
+        /* Adjust for smaller screens */
+    }
+}
